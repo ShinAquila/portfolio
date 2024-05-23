@@ -18,11 +18,23 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     width: 375px;
-    height: 250px;
+    height: auto;
     overflow: hidden;
     transition: all 300ms ease-in-out;
     z-index: -1;
     opacity: 0;
+}
+@media screen and (max-width: 1024px) {
+    .items>.item{
+        width: 315px;
+        height: auto;
+    }
+}
+@media screen and (max-width: 768px) {
+    .items>.item{
+        width: 225px;
+        height: auto;
+    }
 }
 
 .item img {
