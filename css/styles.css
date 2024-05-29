@@ -70,7 +70,7 @@ header {
 }
 nav {
     margin-right: 10%;
-    width: 90%;
+    width: auto;
     max-width: 100%;
     height: 70px;
     right: 3%;
@@ -491,7 +491,8 @@ button:after {
     }
 
     nav {
-        margin-right: 0;
+        /*  */
+        margin-right: 20%; 
         width: 100%;
     }
 
