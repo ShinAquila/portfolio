@@ -53,7 +53,9 @@ a:link {
 .icons:hover {
     color: var(--fontSecond);
 }
-
+.other-sect, .footer-container, .footer-info, .footer2, .footer-section, nav, .nav-list {
+    width: 100%;
+}
 
 
 /* Nav */
@@ -491,40 +493,7 @@ button:after {
     }
 
     nav {
-        /*  */
-        margin-right: 20%; 
-        width: 100%;
-    }
-
-    nav>.nav-list {
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-    }
-
-    .top-sect-content p {
-        padding-right: 5%;
-    }
-
-    .pfp {
-        max-width: 200px;
-    }
-
-    .other-sect {
-        padding: 4%;
-    }
-
-    .others {
-        margin-left: 4%;
-        margin-right: 4%;
-    }
-
-    .footer-container {
-        margin: 0 2% 0 2%;
-    }
-
-    nav {
-        margin-right: 0;
+        margin-right: 0; 
         width: 100%;
     }
 
@@ -538,8 +507,43 @@ button:after {
         margin: 10px 0;
     }
 
-    .box {
-        width: calc(50% - 120px);
+    .top-sect-content p {
+        padding-right: 5%;
+    }
+
+    .pfp {
+        max-width: 200px;
+    }
+
+    .other-sect {
+        padding: 4%;
+        width: 100%; /* Ensuring it takes the full width */
+    }
+
+    .others {
+        margin-left: 4%;
+        margin-right: 4%;
+        width: 100%; /* Ensuring it takes the full width */
+    }
+
+    .footer-container {
+        margin: 0 2% 0 2%;
+        width: 100%; /* Ensuring it takes the full width */
+    }
+
+    .footer-info, .footer2, .footer-section {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .social-media {
+        width: 100%;
+        justify-content: center;
+    }
+
+    button {
+        margin-left: 0;
     }
 }
 
@@ -560,6 +564,7 @@ button:after {
     .top-sect-content p {
         padding-right: 5%;
         font-size: 0.9em;
+        width: 100%; /* Ensuring it takes the full width */
     }
 
     .pfp {
@@ -573,6 +578,7 @@ button:after {
 
     .footer-container {
         margin: 0 1% 0 1%;
+        width: 100%; /* Ensuring it takes the full width */
     }
 
     button {
