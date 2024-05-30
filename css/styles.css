@@ -242,7 +242,7 @@ h3 {
     height: 650px;
 }
 .carousel-cert {
-    padding-top: 19%;
+    padding-top: 150px;
     /* border: 1px solid red; */
 }
 
@@ -280,6 +280,8 @@ h3 {
     color: var(--fontSecond);
 }
 
+
+/* hover animation */
 .project-details a {
     text-decoration: none;
     color: var(--fontSecond);
@@ -341,6 +343,41 @@ h3 {
     text-decoration: none;
     padding: 5% 0;
     font-size: 14px;
+}
+
+
+/* hover animation */
+.contact-info a {
+    text-decoration: none;
+    color: var(--fontSecond);
+    font-size: small;
+    font-family: inherit;
+    position: relative;
+    transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+    transition-duration: 400ms;
+    transition-property: color;
+}
+.contact-info a:focus,
+.contact-info a:hover {
+    color: #fff;
+}
+.contact-info a:focus:after,
+.contact-info a:hover:after {
+    width: 50%;
+    left: 0%;
+}
+.contact-info a:after {
+    content: "";
+    pointer-events: none;
+    bottom: -2px;
+    right: 50%;
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    background-color: #fff;
+    transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+    transition-duration: 400ms;
+    transition-property: width, left;
 }
 
 .contact-section{
@@ -500,11 +537,13 @@ button {
     cursor: pointer;
     position: relative;
     border: none;
+    border-radius: 3px;
     background: none;
     transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
-    transition-duration: 400ms;
+    transition-duration: 0.6s;
     transition-property: color;
-    margin-left: 27%;
+    padding: 10px;
+
 }
 button:focus,
 button:hover {
@@ -567,7 +606,17 @@ button:after {
     button {
         margin-left: 0;
     }
+    .carousel-cert{
+        padding-top: 125px;
+    }
+    .footer-info{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
 }
+
 
 @media screen and (max-width: 768px) {
     main{
@@ -659,6 +708,16 @@ button:after {
     }
     .contact-info a{
         padding: 3px;
+    }
+
+    .carousel-cert{
+        padding-top: 100px;
+    }
+    .footer-info{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
 }
 
