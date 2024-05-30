@@ -561,9 +561,9 @@ button:after {
         margin: 0 2% 0 2%;
     }
 
-    .box {
+    /* .box {
         width: calc(50% - 120px);
-    }
+    } */
 }
 
 @media screen and (max-width: 480px) {
