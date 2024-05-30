@@ -11,10 +11,6 @@
 }
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-
-*{
-    font-family: "Poppins", sans-serif;
-}
 *,
 *::before,
 *::after {
@@ -30,6 +26,7 @@ html, body {
     padding: 0;
     scroll-behavior: smooth;
     overflow-x: hidden;
+    font-family: "Poppins", sans-serif;
 }
 
 body {
@@ -183,6 +180,9 @@ main {
     z-index: 1;
     color: var(--fontThird);
 }
+.top-sect-content h1{
+    text-align: left;
+}
 h1 {
     color: black;
 }
@@ -239,7 +239,7 @@ h3 {
 
 
 .other-sect.portfolio {
-    padding-bottom: 21%;
+    height: 650px;
 }
 .carousel-cert {
     padding-top: 19%;
@@ -315,10 +315,83 @@ h3 {
 
 
 
-.contacts{
-    background-color: var(--thirdColor);
+.contact-section{
+    display: flex;
+    flex-wrap: wrap-reverse;
+    background-color: var(--firstColor);
+    border: 2px solid var(--fontThird);
+    border-radius: 6px;
+    padding: 4%;
+}
+.contact-me{
+    width: 70%;
+    padding-right: 5%;
+    border-right: 1px solid var(--fontFirst);
+}
+.contact-info{
+    width: 30%;
+    display: flex;
+    padding-left: 5%;
+    flex-direction: column;
+}
+.contact-info a{
+    display: block;
+    margin-bottom: 10px;
+    color: var(--fontFirst);
+    text-decoration: none;
+    padding: 5% 0;
+    font-size: 14px;
 }
 
+.contact-section{
+    color: var(--fontFirst);
+}
+
+.contacts{
+    background-color: var(--thirdColor);
+    color: var(--fontThird);
+    padding: 4% 15%;
+}
+.contacts h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: var(--fontFourth);
+}
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.contact-form input,
+.contact-form textarea {
+    padding: 10px;
+    border: 1px solid var(--secondColor);
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: var(--thirdColor);
+    color: var(--fontThird);
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: var(--firstColor);
+}
+
+.contact-form button {
+    font-size: 14px;
+    padding: 10px;
+    color: var(--fourthColor);
+    background-color: var(--firstColor);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: var(--fontFourth);
+}
 
 
 
@@ -352,6 +425,10 @@ h3 {
     width: 30%;
     padding: 2%;
     right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     /* border: 1px solid green; */
 }
 .social-media {
@@ -424,7 +501,6 @@ button {
     position: relative;
     border: none;
     background: none;
-    text-transform: uppercase;
     transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
     transition-duration: 400ms;
     transition-property: color;
@@ -458,12 +534,11 @@ button:after {
 
 
 @media screen and (max-width: 1024px) {
-    /* .top-sect{
-        padding-top: 100px;
-    } */
-
     .top-sect-content p {
         padding-right: 10%;
+    }
+    .other-sect.portfolio{
+        height: 500px;
     }
 
     .nav-list {
@@ -551,6 +626,9 @@ button:after {
     .other-sect {
         padding: 4%;
     }
+    .other-sect.portfolio{
+        height: 350px;
+    }
 
     .others {
         margin-left: 4%;
@@ -561,9 +639,27 @@ button:after {
         margin: 0 2% 0 2%;
     }
 
-    /* .box {
-        width: calc(50% - 120px);
-    } */
+    .pfp{
+        max-width: 200px;
+        padding-right: 2%;
+    }
+
+    .contact-section{
+        display: block;
+    }
+    .contact-me{
+        border: none;
+        width: 100%;
+        padding: 0;
+    }
+    .contact-info{
+        width: 100%;
+        padding: 4% 0 0 0;
+        flex-direction: column;
+    }
+    .contact-info a{
+        padding: 3px;
+    }
 }
 
 @media screen and (max-width: 480px) {
