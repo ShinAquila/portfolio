@@ -15,27 +15,27 @@
 *{
     font-family: "Poppins", sans-serif;
 }
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
 h1{
     text-align: center;
 }
 
-html {
+html, body {
     width: 100%;
-    height: 100%;
     margin: 0;
     padding: 0;
     scroll-behavior: smooth;
-    box-sizing: border-box;
+    overflow-x: hidden;
 }
 
 body {
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    padding: 0;
     background-color: var(--thirdColor);
     color: var(--fontFirst);
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
     font-family: "Poppins", sans-serif;
 }
 
@@ -53,9 +53,7 @@ a:link {
 .icons:hover {
     color: var(--fontSecond);
 }
-.other-sect, .footer-container, .footer-info, .footer2, .footer-section, nav, .nav-list {
-    width: 100%;
-}
+
 
 
 /* Nav */
@@ -69,14 +67,17 @@ header {
     position: fixed;
     top: 0;
     z-index: 5;
+    padding: 0 10px;
+    box-sizing: border-box;
 }
 nav {
-    margin-right: 10%;
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 10px;
     width: auto;
     max-width: 100%;
     height: 70px;
-    right: 3%;
-    /* border: 1px solid blue; */
 }
 .nav-list {
     display: flex;
@@ -86,13 +87,11 @@ nav {
     padding: 0;
     margin: 0;
     flex-wrap: wrap;
-    /* border: 1px solid red; */
 }
 .nav-list li {
     color: white;
     display: block;
     height: 100%;
-    /* border: 1px solid green; */
     align-items: center;
 }
 .nav-list a {
@@ -103,7 +102,6 @@ nav {
     align-items: center;
     padding: 0 10px;
     transition: background-color 0.3s ease, color 0.3s ease;
-    /* border: 1px solid green; */
 }
 .nav-list a:hover {
     color: var(--fontFourth);
@@ -113,18 +111,26 @@ nav {
     border-radius: 50%;
     width: 60px;
     height: 60px;
-    margin: 15px;
+    margin: 5px;
 }
 .logo-a {
-    margin-left: 10.5%;
+    margin-left: 10px;
+}
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: var(--fourthColor);
+    cursor: pointer;
 }
 
 
 
 /* Top Half of the Main Section */
 main {
-    width: 100vw;
-    position: absolute;
+    width: 100%;
+    position: relative;
     padding-top: 40px;
 }
 .landing-socials{
@@ -208,24 +214,26 @@ h3 {
     color: var(--fontThird);
     text-align: center;
 }
+
 .my-skills{
     display: flex;
     flex-wrap: wrap;
+    gap: 6px;
     justify-content: center;
-    align-items: center;
+    padding: 0 10px;
 }
 .box{
     background-color: var(--firstColor);
     width: 120px;
     height: 120px;
-    margin: 10px;
+    margin: 10px auto;
     text-align: center;
     border-radius: 6px;
     padding-top: 2%;
 }
 .box img{
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
 }
 
 
@@ -450,6 +458,10 @@ button:after {
 
 
 @media screen and (max-width: 1024px) {
+    /* .top-sect{
+        padding-top: 100px;
+    } */
+
     .top-sect-content p {
         padding-right: 10%;
     }
@@ -483,9 +495,14 @@ button:after {
 }
 
 @media screen and (max-width: 768px) {
+    main{
+        padding-top: 110px;
+    }
+
     header {
         flex-direction: column;
         height: auto;
+        padding: 10px;
     }
 
     .logo-a {
@@ -495,16 +512,32 @@ button:after {
     nav {
         margin-right: 0; 
         width: 100%;
+        display: flex;
+        justify-content: center;
+        transition: max-height 0.5s ease-out;
     }
 
     .nav-list {
+        display: none;
         flex-direction: column;
-        align-items: center;
+        text-align: center;
         width: 100%;
+        background-color: var(--firstColor);
+    }
+    .nav-list.active{
+        display: flex;
+    }
+    .menu-toggle{
+        display: block;
     }
 
     .nav-list li {
-        margin: 10px 0;
+        width: 100%;
+        margin: 0;
+    }
+    .nav-list a{
+        padding: 15px;
+        border-top: 1px solid var(--secondColor);
     }
 
     .top-sect-content p {
@@ -517,33 +550,19 @@ button:after {
 
     .other-sect {
         padding: 4%;
-        width: 100%; /* Ensuring it takes the full width */
     }
 
     .others {
         margin-left: 4%;
         margin-right: 4%;
-        width: 100%; /* Ensuring it takes the full width */
     }
 
     .footer-container {
         margin: 0 2% 0 2%;
-        width: 100%; /* Ensuring it takes the full width */
     }
 
-    .footer-info, .footer2, .footer-section {
-        width: 100%;
-        text-align: center;
-        margin-bottom: 20px;
-    }
-
-    .social-media {
-        width: 100%;
-        justify-content: center;
-    }
-
-    button {
-        margin-left: 0;
+    .box {
+        width: calc(50% - 120px);
     }
 }
 
@@ -564,7 +583,6 @@ button:after {
     .top-sect-content p {
         padding-right: 5%;
         font-size: 0.9em;
-        width: 100%; /* Ensuring it takes the full width */
     }
 
     .pfp {
@@ -578,7 +596,6 @@ button:after {
 
     .footer-container {
         margin: 0 1% 0 1%;
-        width: 100%; /* Ensuring it takes the full width */
     }
 
     button {
